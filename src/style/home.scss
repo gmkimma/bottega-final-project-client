@@ -1,0 +1,71 @@
+.game-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #427e60;
+  height: calc(100vh - 204px);
+
+  .dealer-cards {
+    display: flex;
+  }
+
+  .player-cards {
+    display: flex;
+  }
+
+  .card {
+    height: 86px;
+    width: 60px;
+    margin: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: black;
+    background-image: url('../assets/images/home/card-design.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .action-wrapper {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    font-weight: bold;
+
+    .action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      img {
+        height: 50px;
+        width: 50px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  .odds-wrapper {
+    position: absolute;
+    left: 125px;
+    bottom: 350px;
+    font-size: 1.1rem;
+
+    p {
+      text-decoration: underline;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      font-weight: bold;
+      margin-left: -40px;
+      margin-top: 10px;
+    }
+  }
+}

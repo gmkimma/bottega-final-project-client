@@ -1,0 +1,16 @@
+.login-page {
+  background-color: rgb(155, 155, 155);
+  .login-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 254px);
+    margin: 50px 100px 0 100px;
+    padding-bottom: 50px;
+
+    .right-side {
+      background-image: url('../assets/images/login/login.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

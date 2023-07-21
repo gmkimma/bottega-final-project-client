@@ -1,0 +1,22 @@
+.visible-card {
+  height: 86px;
+  width: 60px;
+  margin: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.spade-wrapper,
+.club-wrapper,
+.heart-wrapper,
+.diamond-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-wrapper,
+.diamond-wrapper {
+  color: red;
+}
