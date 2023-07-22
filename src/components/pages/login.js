@@ -13,6 +13,8 @@ function Login () {
 
   const [loginStatus, setLoginStatus] = useState('')
 
+  const [cookie, setCookie] = useState('')
+
   let navigate = useNavigate()
 
   axios.defaults.withCredentials = true
@@ -59,6 +61,7 @@ function Login () {
 
   useEffect(() => {
     if (loginStatus === 'Login successful') {
+      console.log('login successful')
       return navigate('/')
     }
   }, [loginStatus, navigate])
