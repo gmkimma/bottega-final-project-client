@@ -29,7 +29,7 @@ function Login () {
         }
       )
       .then(response => {
-        console.log(response)
+        setLoginStatus(response.data.message)
       })
       .catch(error => {
         console.log(error)
