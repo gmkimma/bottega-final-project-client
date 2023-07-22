@@ -61,7 +61,8 @@ function Login () {
 
   useEffect(() => {
     if (loginStatus === 'Login successful') {
-      console.log('login successful')
+      // console.log('login successful')
+      document.cookie = 'username=John Doe'
       return navigate('/')
     }
   }, [loginStatus, navigate])
