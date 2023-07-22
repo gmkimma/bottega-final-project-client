@@ -22,6 +22,10 @@ axios.defaults.withCredentials = true
 const numOfDecks = 8
 const deck = Deck(numOfDecks)
 
+const live_url =
+  'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com'
+const local_url = 'http://localhost:3001'
+
 let targetCard = ''
 
 function Home () {
@@ -55,13 +59,9 @@ function Home () {
 
   //Checking if user is logged in
   useEffect(() => {
-    axios
-      .get(
-        'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com/api/login'
-      )
-      .then(response => {
-        setLoggedIn(response.data.loggedIn)
-      })
+    axios.get(`${live_url}/api/login`).then(response => {
+      setLoggedIn(response.data.loggedIn)
+    })
   }, [])
 
   //Updating the dealer total

@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/images/navigation/logo.png'
 import axios from 'axios'
 
+const live_url =
+  'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com'
+const local_url = 'http://localhost:3001'
+
 function NavBar (props) {
   function handleSignOut () {
     axios
-      .delete(
-        'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com/api/session',
-        { withCredentials: true }
-      )
+      .delete(`${live_url}/api/session`, { withCredentials: true })
       .then(response => {
         if (response.status === 200) {
           console.log(`You are loggedin: ${props.loggedIn}`)

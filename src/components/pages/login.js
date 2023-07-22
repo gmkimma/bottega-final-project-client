@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 import NavBar from '../navigation/navigation-container'
 
+const live_url =
+  'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com'
+const local_url = 'http://localhost:3001'
+
 function Login () {
   const [usernameCreation, setUsernameCreation] = useState('')
   const [passwordCreation, setPasswordCreation] = useState('')
@@ -13,21 +17,16 @@ function Login () {
 
   const [loginStatus, setLoginStatus] = useState('')
 
-  const [cookie, setCookie] = useState('')
-
   let navigate = useNavigate()
 
   axios.defaults.withCredentials = true
 
   function register () {
     axios
-      .post(
-        'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com/api/register',
-        {
-          username: usernameCreation,
-          password: passwordCreation
-        }
-      )
+      .post(`${live_url}/api/register`, {
+        username: usernameCreation,
+        password: passwordCreation
+      })
       .then(response => {
         setLoginStatus(response.data.message)
       })
@@ -41,14 +40,12 @@ function Login () {
 
   function login () {
     axios
-      .post(
-        'https://bottega-capstone-project-kimma-d587bac5eeb7.herokuapp.com/api/login',
-        {
-          username: usernameLogin,
-          password: passwordLogin
-        }
-      )
+      .post(`${live_url}/api/login`, {
+        username: usernameLogin,
+        password: passwordLogin
+      })
       .then(response => {
+        console.log(response)
         setLoginStatus(response.data.message)
       })
       .catch(error => {
@@ -61,7 +58,6 @@ function Login () {
 
   useEffect(() => {
     if (loginStatus === 'Login successful') {
-      // console.log('login successful')
       return navigate('/')
     }
   }, [loginStatus, navigate])
